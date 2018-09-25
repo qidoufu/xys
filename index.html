@@ -1,0 +1,394 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<script src="js/jquery.min.js"></script>
+
+<script type="text/javascript">
+	new function (){
+	   var _self = this;
+	   _self.width = 1024;//设置默认最大宽度
+	   _self.fontSize = 100;//默认字体大小
+	   _self.widthProportion = function(){var p = (document.body&&document.body.clientWidth||document.getElementsByTagName("html")[0].offsetWidth)/_self.width;return p>1?1:p<0.32?0.32:p;};
+	   _self.changePage = function(){
+		   document.getElementsByTagName("html")[0].setAttribute("style","font-size:"+_self.widthProportion()*_self.fontSize+"px !important");
+	   }
+	   _self.changePage(); 
+	   window.addEventListener('resize',function(){_self.changePage();},false);
+	};
+</script>
+
+<title></title>
+</head>
+
+<body>
+<div class="con over_f">
+	<div class="l_pan fl">
+		<a href="javascript:;" class="logo"><img  src="images/logo.png"></a>
+		<div class="nav">
+			<a href="javascript:;">ABOUT US</a>
+			<a href="javascript:;">CONTACT</a>
+		</div>
+	</div>
+	<div class="r_pan fr">HOME</div>
+	<div class="m_pan fl datouwang-container">
+		<div class="photos"  id="container">
+			<div class="grid photo_01">
+				<div class="imgholder">
+					<img src="images/pic_01.png" />
+				</div>
+				<div class="hover">
+					<img src="images/hover_01.png" />
+				</div>
+			</div>
+			
+			<div class="grid photo_03">
+				<div class="imgholder">
+					<img src="images/pic_03.png" />
+				</div>
+				<div class="hover">
+					<img src="images/hover_03.png" />
+				</div>
+			</div>
+			<div class="grid photo_04">
+				<div class="imgholder">
+					<img src="images/pic_04.png" />
+				</div>
+				<div class="hover">
+					<img src="images/hover_04.png" />
+				</div>
+			</div>
+			
+			<div class="grid txt_02">
+				<div class="imgholder">
+					<img src="images/txt_02.png" />
+				</div>
+				<div class="hover">
+					<img src="images/txt_02.png" />
+				</div>
+			</div>
+			 <div class="grid photo_02">
+				<div class="imgholder">
+					<img src="images/pic_02.png" />
+				</div>
+				<div class="hover">
+					<img src="images/hover_02.png" />
+				</div>
+			</div>
+			<div class="grid txt_01">
+				<div class="imgholder">
+					<img src="images/txt_01.png" />
+				</div>
+				<div class="hover">
+					<img src="images/txt_01.png" />
+				</div>
+			</div> 
+			<div class="grid photo_05">
+				<div class="imgholder">
+					<img src="images/pic_05.png" />
+				</div>
+				<div class="hover">
+					<img src="images/hover_05.png" />
+				</div>
+			</div>
+			<div class="grid photo_08">
+				<div class="imgholder">
+					<img src="images/pic_08.png" />
+				</div>
+				<div class="hover">
+					<img src="images/hover_08.png" />
+				</div>
+			</div>
+			<div class="grid photo_06">
+				<div class="imgholder">
+					<img src="images/pic_06.png" />
+				</div>
+				<div class="hover">
+					<img src="images/hover_06.png" />
+				</div>
+			</div>
+			<div class="grid photo_07">
+				<div class="imgholder">
+					<img src="images/pic_07.png" />
+				</div>
+				<div class="hover">
+					<img src="images/hover_07.png" />
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+</div>
+
+
+<script type="text/javascript">		
+
+		
+		$(function(){	
+			var windowWidth = $(window).width();
+				if (windowWidth < 1024) { 
+					var h01 = $('.con .m_pan .photo_01 .imgholder img').height()+6;	
+					var h03 = $('.con .m_pan .photo_03 .imgholder img').height()+6;
+					var h04 = $('.con .m_pan .photo_04 .imgholder img').height()+6;
+					var t02 = $('.con .m_pan .txt_02 .imgholder img').height()+6;
+					var h02 = $('.con .m_pan .photo_02 .imgholder img').height()+6;
+					var t01 = $('.con .m_pan .txt_01 .imgholder img').height()+6;
+					$('.con .m_pan .txt_02').css('top',h01);
+					$('.con .m_pan .photo_02').css('top',h03);
+					$('.con .m_pan .txt_01').css('top',h04);
+					var t_h_01 = h01 + t02;
+					$('.con .m_pan .photo_05').css('top', t_h_01 );
+					var t_h_02 = h03 + h02;
+					$('.con .m_pan .photo_08').css('top', t_h_02 );
+					var t_h_03 = h04 + t01;
+					$('.con .m_pan .photo_06').css('top', t_h_03 );
+					var h06 = $('.con .m_pan .photo_06 .imgholder img').height()+6;
+					var t_h_04 = h04 + t01 + h06;
+					$('.con .m_pan .photo_07').css('top', t_h_04 );
+					
+					var p01_w= $('.con .m_pan .photo_01').width();
+					var p01_h= $('.con .m_pan .photo_01 ').height() + 20;
+					$('.con .m_pan .photo_01 .hover img').css({'width':p01_w,'height':p01_h});
+					var p02_w= $('.con .m_pan .photo_02').width();
+					var p02_h= $('.con .m_pan .photo_02 ').height();
+					$('.con .m_pan .photo_02 .hover img').css({'width':p02_w,'height':p02_h});
+					var p03_w= $('.con .m_pan .photo_03').width();
+					var p03_h= $('.con .m_pan .photo_03').height();
+					$('.con .m_pan .photo_03 .hover img').css({'width':p03_w,'height':p03_h});
+					var p04_w= $('.con .m_pan .photo_04').width();
+					var p04_h= $('.con .m_pan .photo_04').height();
+					$('.con .m_pan .photo_04 .hover img').css({'width':p04_w,'height':p04_h});	
+					var p05_w= $('.con .m_pan .photo_05').width();
+					var p05_h= $('.con .m_pan .photo_05').height();
+					$('.con .m_pan .photo_05 .hover img').css({'width':p05_w,'height':p05_h});
+					var p06_w= $('.con .m_pan .photo_06').width();
+					var p06_h= $('.con .m_pan .photo_06').height();
+					$('.con .m_pan .photo_06 .hover img').css({'width':p06_w,'height':p06_h});
+					var p07_w= $('.con .m_pan .photo_07').width() +10;
+					var p07_h= $('.con .m_pan .photo_07').height();
+					$('.con .m_pan .photo_07 .hover img').css({'width':p07_w,'height':p07_h});
+					var p08_w= $('.con .m_pan .photo_08').width();
+					var p08_h= $('.con .m_pan .photo_08').height();
+					$('.con .m_pan .photo_08 .hover img').css({'width':p08_w,'height':p08_h});
+					var t01_w= $('.con .m_pan .txt_01').width();
+					var t01_h= $('.con .m_pan .txt_01').height();
+					$('.con .m_pan .txt_01 .hover img').css({'width':t01_w,'height':t01_h});
+					var t02_w= $('.con .m_pan .txt_02').width();
+					var t02_h= $('.con .m_pan .txt_02').height();
+					$('.con .m_pan .txt_02 .hover img').css({'width':t02_w,'height':t02_h});
+					
+				} else {
+					var h01 = $('.con .m_pan .photo_01 img').height()+20;		
+					var h03 = $('.con .m_pan .photo_03 img').height()+20;
+					var h04 = $('.con .m_pan .photo_04 img').height()+20;
+					var t01 = $('.con .m_pan .txt_01 img').height()+20;
+					var h02 = $('.con .m_pan .photo_02 img').height()+20;
+					var hall = $('.con .m_pan .photo_01 img').height()+ 40 + $('.con .m_pan .photo_02 img').height();
+					var w02 = $('.con .m_pan .txt_02').width()+10; 
+					var h06 = $('.con .m_pan .photo_06 .imgholder img').height();
+					var h07 = $('.con .m_pan .photo_07').width()+10;
+					$('.con .m_pan .photo_01').css('height', h01-'20');
+					$('.con .m_pan .photo_03 img').css('height', h01 + h02 -'20');
+					$('.con .m_pan .txt_02').css('top',h01);
+					$('.con .m_pan .photo_02').css('top',h01);
+					$('.con .m_pan .photo_02').css('left',w02);
+					$('.con .m_pan .photo_06').css('top',hall);
+					$('.con .m_pan .photo_06').css('left',w02);
+					$('.con .m_pan .photo_05').css('top',h04);
+					var h03_new =  $('.con .m_pan .photo_03 img').height();
+					var h03_new_01 = h03_new - h04;
+					var h03_new_02 = h03_new_01; 
+					$('.con .m_pan .photo_05 img').css('height', h03_new_02);
+					$('.con .m_pan .photo_07 .imgholder ').css('height',h06);
+					$('.con .m_pan .photo_07 .imgholder img').css('height',h06);
+					$('.con .m_pan .photo_07').css('top',hall);
+					$('.con .m_pan .photo_07 .imgholder img').css('width',h07);
+					var hall01 = $('.con .m_pan .photo_03 img').height() + $('.con .m_pan .photo_06 .imgholder img').height();	
+					var hall011 = hall01 - $('.con .m_pan .photo_01 img').height();
+					$('.con .m_pan .txt_02 img').css('height',hall011);
+					var hall02 = $('.con .m_pan .photo_03 img').height() + $('.con .m_pan .photo_06 .imgholder img').height();	
+					var hall021 = hall02 - $('.con .m_pan .photo_08 img').height();
+					$('.con .m_pan .txt_01 img').css('height',hall021);
+					var hall022 = hall021 +20
+					$('.con .m_pan .photo_08').css('top',hall022);
+					
+					
+					var p01_w= $('.con .m_pan .photo_01').width();
+					var p01_h= $('.con .m_pan .photo_01 ').height() + 20;
+					$('.con .m_pan .photo_01 .hover img').css({'width':p01_w,'height':p01_h});
+					var p02_w= $('.con .m_pan .photo_02').width();
+					var p02_h= $('.con .m_pan .photo_02 ').height();
+					$('.con .m_pan .photo_02 .hover img').css({'width':p02_w,'height':p02_h});
+					var p03_w= $('.con .m_pan .photo_03').width();
+					var p03_h= $('.con .m_pan .photo_03').height();
+					$('.con .m_pan .photo_03 .hover img').css({'width':p03_w,'height':p03_h});
+					var p04_w= $('.con .m_pan .photo_04').width();
+					var p04_h= $('.con .m_pan .photo_04').height();
+					$('.con .m_pan .photo_04 .hover img').css({'width':p04_w,'height':p04_h});	
+					var p05_w= $('.con .m_pan .photo_05').width();
+					var p05_h= $('.con .m_pan .photo_05').height();
+					$('.con .m_pan .photo_05 .hover img').css({'width':p05_w,'height':p05_h});
+					var p06_w= $('.con .m_pan .photo_06').width();
+					var p06_h= $('.con .m_pan .photo_06').height();
+					$('.con .m_pan .photo_06 .hover img').css({'width':p06_w,'height':p06_h});
+					var p07_w= $('.con .m_pan .photo_07').width() +10;
+					var p07_h= $('.con .m_pan .photo_07').height();
+					$('.con .m_pan .photo_07 .hover img').css({'width':p07_w,'height':p07_h});
+					var p08_w= $('.con .m_pan .photo_08').width();
+					var p08_h= $('.con .m_pan .photo_08').height();
+					$('.con .m_pan .photo_08 .hover img').css({'width':p08_w,'height':p08_h});
+					var t01_w= $('.con .m_pan .txt_01').width();
+					var t01_h= $('.con .m_pan .txt_01').height();
+					$('.con .m_pan .txt_01 .hover img').css({'width':t01_w,'height':t01_h});
+					var t02_w= $('.con .m_pan .txt_02').width();
+					var t02_h= $('.con .m_pan .txt_02').height();
+					$('.con .m_pan .txt_02 .hover img').css({'width':t02_w,'height':t02_h});
+				}
+			
+			
+			$(window).resize(function() {
+				var windowWidth = $(window).width();
+				if (windowWidth < 1024) { 
+					var h01 = $('.con .m_pan .photo_01 .imgholder img').height()+6;	
+					var h03 = $('.con .m_pan .photo_03 .imgholder img').height()+6;
+					var h04 = $('.con .m_pan .photo_04 .imgholder img').height()+6;
+					var t02 = $('.con .m_pan .txt_02 .imgholder img').height()+6;
+					var h02 = $('.con .m_pan .photo_02 .imgholder img').height()+6;
+					var t01 = $('.con .m_pan .txt_01 .imgholder img').height()+6;
+					$('.con .m_pan .txt_02').css('top',h01);
+					$('.con .m_pan .photo_02').css('top',h03);
+					$('.con .m_pan .txt_01').css('top',h04);
+					var t_h_01 = h01 + t02;
+					$('.con .m_pan .photo_05').css('top', t_h_01 );
+					var t_h_02 = h03 + h02;
+					$('.con .m_pan .photo_08').css('top', t_h_02 );
+					var t_h_03 = h04 + t01;
+					$('.con .m_pan .photo_06').css('top', t_h_03 );
+					var h06 = $('.con .m_pan .photo_06 .imgholder img').height()+6;
+					var t_h_04 = h04 + t01 + h06;
+					$('.con .m_pan .photo_07').css('top', t_h_04 );
+					
+					var p01_w= $('.con .m_pan .photo_01').width();
+					var p01_h= $('.con .m_pan .photo_01 ').height() + 20;
+					$('.con .m_pan .photo_01 .hover img').css({'width':p01_w,'height':p01_h});
+					var p02_w= $('.con .m_pan .photo_02').width();
+					var p02_h= $('.con .m_pan .photo_02 ').height();
+					$('.con .m_pan .photo_02 .hover img').css({'width':p02_w,'height':p02_h});
+					var p03_w= $('.con .m_pan .photo_03').width();
+					var p03_h= $('.con .m_pan .photo_03').height();
+					$('.con .m_pan .photo_03 .hover img').css({'width':p03_w,'height':p03_h});
+					var p04_w= $('.con .m_pan .photo_04').width();
+					var p04_h= $('.con .m_pan .photo_04').height();
+					$('.con .m_pan .photo_04 .hover img').css({'width':p04_w,'height':p04_h});	
+					var p05_w= $('.con .m_pan .photo_05').width();
+					var p05_h= $('.con .m_pan .photo_05').height();
+					$('.con .m_pan .photo_05 .hover img').css({'width':p05_w,'height':p05_h});
+					var p06_w= $('.con .m_pan .photo_06').width();
+					var p06_h= $('.con .m_pan .photo_06').height();
+					$('.con .m_pan .photo_06 .hover img').css({'width':p06_w,'height':p06_h});
+					var p07_w= $('.con .m_pan .photo_07').width() +10;
+					var p07_h= $('.con .m_pan .photo_07').height();
+					$('.con .m_pan .photo_07 .hover img').css({'width':p07_w,'height':p07_h});
+					var p08_w= $('.con .m_pan .photo_08').width();
+					var p08_h= $('.con .m_pan .photo_08').height();
+					$('.con .m_pan .photo_08 .hover img').css({'width':p08_w,'height':p08_h});
+					var t01_w= $('.con .m_pan .txt_01').width();
+					var t01_h= $('.con .m_pan .txt_01').height();
+					$('.con .m_pan .txt_01 .hover img').css({'width':t01_w,'height':t01_h});
+					var t02_w= $('.con .m_pan .txt_02').width();
+					var t02_h= $('.con .m_pan .txt_02').height();
+					$('.con .m_pan .txt_02 .hover img').css({'width':t02_w,'height':t02_h});
+					
+					
+				} else {
+					var h01 = $('.con .m_pan .photo_01 img').height()+20;		
+					var h03 = $('.con .m_pan .photo_03 img').height()+20;
+					var h04 = $('.con .m_pan .photo_04 img').height()+20;
+					var t01 = $('.con .m_pan .txt_01 img').height()+20;
+					var h02 = $('.con .m_pan .photo_02 img').height()+20;
+					var hall = $('.con .m_pan .photo_01 img').height()+ 40 + $('.con .m_pan .photo_02 img').height();
+					var w02 = $('.con .m_pan .txt_02').width()+10; 
+					var h06 = $('.con .m_pan .photo_06 .imgholder img').height();
+					var h07 = $('.con .m_pan .photo_07').width()+10;
+					$('.con .m_pan .photo_01').css('height', h01-'20');
+					$('.con .m_pan .photo_03 img').css('height', h01 + h02 -'20');
+					$('.con .m_pan .txt_02').css('top',h01);
+					$('.con .m_pan .photo_02').css('top',h01);
+					$('.con .m_pan .photo_02').css('left',w02);
+					$('.con .m_pan .photo_06').css('top',hall);
+					$('.con .m_pan .photo_06').css('left',w02);
+					$('.con .m_pan .photo_05').css('top',h04);
+					var h03_new =  $('.con .m_pan .photo_03 img').height();
+					var h03_new_01 = h03_new - h04;
+					var h03_new_02 = h03_new_01; 
+					$('.con .m_pan .photo_05 img').css('height', h03_new_02);
+					$('.con .m_pan .photo_07 .imgholder ').css('height',h06);
+					$('.con .m_pan .photo_07 .imgholder img').css('height',h06);
+					$('.con .m_pan .photo_07').css('top',hall);
+					$('.con .m_pan .photo_07 .imgholder img').css('width',h07);
+					var hall01 = $('.con .m_pan .photo_03 img').height() + $('.con .m_pan .photo_06 .imgholder img').height();	
+					var hall011 = hall01 - $('.con .m_pan .photo_01 img').height();
+					$('.con .m_pan .txt_02 img').css('height',hall011);
+					var hall02 = $('.con .m_pan .photo_03 img').height() + $('.con .m_pan .photo_06 .imgholder img').height();	
+					var hall021 = hall02 - $('.con .m_pan .photo_08 img').height();
+					$('.con .m_pan .txt_01 img').css('height',hall021);
+					var hall022 = hall021 +20
+					$('.con .m_pan .photo_08').css('top',hall022);
+					
+					
+					var p01_w= $('.con .m_pan .photo_01').width();
+					var p01_h= $('.con .m_pan .photo_01 ').height() + 20;
+					$('.con .m_pan .photo_01 .hover img').css({'width':p01_w,'height':p01_h});
+					var p02_w= $('.con .m_pan .photo_02').width();
+					var p02_h= $('.con .m_pan .photo_02 ').height();
+					$('.con .m_pan .photo_02 .hover img').css({'width':p02_w,'height':p02_h});
+					var p03_w= $('.con .m_pan .photo_03').width();
+					var p03_h= $('.con .m_pan .photo_03').height();
+					$('.con .m_pan .photo_03 .hover img').css({'width':p03_w,'height':p03_h});
+					var p04_w= $('.con .m_pan .photo_04').width();
+					var p04_h= $('.con .m_pan .photo_04').height();
+					$('.con .m_pan .photo_04 .hover img').css({'width':p04_w,'height':p04_h});	
+					var p05_w= $('.con .m_pan .photo_05').width();
+					var p05_h= $('.con .m_pan .photo_05').height();
+					$('.con .m_pan .photo_05 .hover img').css({'width':p05_w,'height':p05_h});
+					var p06_w= $('.con .m_pan .photo_06').width();
+					var p06_h= $('.con .m_pan .photo_06').height();
+					$('.con .m_pan .photo_06 .hover img').css({'width':p06_w,'height':p06_h});
+					var p07_w= $('.con .m_pan .photo_07').width() +10;
+					var p07_h= $('.con .m_pan .photo_07').height();
+					$('.con .m_pan .photo_07 .hover img').css({'width':p07_w,'height':p07_h});
+					var p08_w= $('.con .m_pan .photo_08').width();
+					var p08_h= $('.con .m_pan .photo_08').height();
+					$('.con .m_pan .photo_08 .hover img').css({'width':p08_w,'height':p08_h});
+					var t01_w= $('.con .m_pan .txt_01').width();
+					var t01_h= $('.con .m_pan .txt_01').height();
+					$('.con .m_pan .txt_01 .hover img').css({'width':t01_w,'height':t01_h});
+					var t02_w= $('.con .m_pan .txt_02').width();
+					var t02_h= $('.con .m_pan .txt_02').height();
+					$('.con .m_pan .txt_02 .hover img').css({'width':t02_w,'height':t02_h});
+				}
+			
+			
+			
+				
+			});
+			
+			
+		})
+
+	
+</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
